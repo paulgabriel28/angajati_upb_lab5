@@ -74,25 +74,22 @@ void SortareDataNastere(Angajat *vec, const int &dim) {
         for(int j = 0; j < dim; j++){
             string CNPi = vec[i].getCNP();
             int ani = stoi(CNPi.substr(1, 2));
-            int lunai = stoi(CNPi.substr(3, 4));
-            int ziuai = stoi(CNPi.substr(5, 6));
+            int lunai = stoi(CNPi.substr(3, 2));
+            int ziuai = stoi(CNPi.substr(5, 2));
             string CNPj = vec[j].getCNP();
             int anj = stoi(CNPj.substr(1, 2));
-            int lunaj = stoi(CNPj.substr(3, 4));
-            int ziuaj = stoi(CNPj.substr(5, 6));
+            int lunaj = stoi(CNPj.substr(3, 2));
+            int ziuaj = stoi(CNPj.substr(5, 2));
 
-            cout<<ani<<' '<<lunai<<' '<<ziuai<<endl;
-            cout<<anj<<' '<<lunaj<<' '<<ziuaj<<endl<<endl;
-
-            if(vec[i].getCNP0() == '1' || vec[i].getCNP0() == '2')
+            if(CNPi[0] == '1' || CNPi[0] == '2')
                 ani = ani + 1900;
             else 
                 ani = ani + 2000;
             
-            if(vec[j].getCNP0() == '1' || vec[j].getCNP0() == '2')
-                ani = ani + 1900;
+            if(CNPj[0] == '1' || CNPj[0] == '2')
+                anj = anj + 1900;
             else 
-                ani = ani + 2000;
+                anj = anj + 2000;
 
             int datai = ani * 360 + lunai * 30 + ziuai;
             int dataj = anj * 360 + lunaj * 30 + ziuaj;
