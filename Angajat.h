@@ -10,7 +10,7 @@ class Angajat{
     string prenume; //daca are 2 sau mai multe prenume, acestea sunt legate cu -: Ana-Maria
     string CNP;
     bool part_time; //true daca e part_time, false altfel
-    
+
 public:
     //constructor fara parametri
     Angajat();
@@ -48,4 +48,13 @@ public:
     
     /*se primeste ca parametru un string care contine numele si prenumele separate prin spatiu: : Popescu Marin-Ion; sunt extrase numele si respectiv prenumele din acest string si folosite sa modifice numele si prenumele unei persoane*/
     void setNumePrenume(string);
+
+    // returneaza CNP
+    string getCNP() const;
+
+    // returneaza secolul
+    char getCNP0() const;
+
+    // operator=
+    Angajat& operator=(const Angajat &) = default;
 };

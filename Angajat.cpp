@@ -80,3 +80,11 @@ void Angajat::setNumePrenume(string new_nume) {
     nume = new_nume.substr(0, space);
     prenume = new_nume.substr(space + 1, new_nume.size());
 }
+
+string Angajat::getCNP() const {
+    return CNP;
+}
+
+char Angajat::getCNP0() const {
+    return CNP[0];
+}
